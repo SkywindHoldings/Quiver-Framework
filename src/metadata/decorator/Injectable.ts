@@ -5,13 +5,12 @@ import {Type} from "../../type/Type";
  * @author Jānis Radiņš
  */
 export function Injectable():Function {
-    return (target:Type<any>):Type<any> => {
-
-        let constructorArgs:Type<any>[] = Reflect.getMetadata("design:paramtypes", target);
+    return (target: Type): Type => {
+        const constructorArgs: Type[] = Reflect.getMetadata("design:paramtypes", target);
 
         if (constructorArgs && constructorArgs.length > 0) {
             metadataInternal.getTypeDescriptor(target).setConstructorArguments(constructorArgs);
         }
         return target;
-    }
+    };
 }

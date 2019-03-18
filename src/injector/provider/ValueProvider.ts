@@ -5,7 +5,7 @@ import {InjectionValueProvider} from "./InjectionValueProvider";
  */
 export class ValueProvider implements InjectionValueProvider {
 
-    constructor(private value:any) {
+    constructor(private value: any) {
 
     }
 
@@ -17,4 +17,3 @@ export class ValueProvider implements InjectionValueProvider {
         this.value = null;
     }
 }
-
